@@ -10,7 +10,7 @@ if keyboard.read_key() == 'h':
     while True:
         '''if keyboard.read_key() == 'j':
             pyautogui.PAUSE = 120
-          h  phrint('paused')
+            print('paused')
             if keyboard.read_key() == 'h':
                 print('continued')
                 continue'''
