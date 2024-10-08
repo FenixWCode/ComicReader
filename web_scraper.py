@@ -1,7 +1,6 @@
 from selenium import webdriver
 from selenium.webdriver.firefox.options import Options
 from selenium.webdriver.common.by import By
-
 import os
 import requests
 import shutil
@@ -22,6 +21,7 @@ def download_chapters(base_path, urls: list):
                 os.chdir(path)
             else:
                 print("Path already exists")
+                os.chdir(path)
 
         cur_page_numb = int(driver.find_element(By.CLASS_NAME, "current").text)
         max_page_numb = int(driver.find_element(By.CLASS_NAME, "num-pages").text)
@@ -49,8 +49,7 @@ def download_chapters(base_path, urls: list):
             else:
                 driver.refresh()
                 continue
-    else:
-        driver.quit()
+    driver.quit()
 
 
 options = Options()
@@ -63,8 +62,4 @@ link = [
 ]
 
 download_chapters(b_path, link)
-
-
-
-
 
