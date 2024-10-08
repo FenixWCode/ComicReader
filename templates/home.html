@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.5">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="card-grid">
+
+        {% for dir in dirs %}
+            <a href="{{ url_for('index', cur_dir=dir) }}">
+                <div class="card">
+                    <img src="{{ url_for('get_image', folder=dir, filename='1.jpg') }}">
+                    <h3 class="title">{{ dir }} </h3>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+</body>
+</html>
