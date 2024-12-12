@@ -1,18 +1,25 @@
- .image-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
+.image-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
 
-        }
-        img {
-            max-width: 100%;
-            max-height: 100%;
-            display: block;
-            margin-bottom: 2em;
-        }
+}
+img {
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    margin-bottom: 2em;
+}
 
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
 
 .card-grid {
   display: grid;
@@ -45,24 +52,57 @@
 }
 
 
-
 a {
     color: white;
 }
-
 a:link {
   text-decoration: none;
-
 }
 a:visited {
   text-decoration: none;
-
 }
 a:hover {
   text-decoration: none;
-
 }
 a:active {
   text-decoration: none;
+}
 
+
+/* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+    max-height: 100px;
+    align-items: right;
+    justify-content: right;
+
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+    float: left;
+    color: #f2f2f2;
+    text-align: right;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+/* Add a color to the active/current link */
+.topnav a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.logo {
+    max-width: 80px;
+    max-height: 50px;
+    align-items: left;
+    justify-content: left;
 }

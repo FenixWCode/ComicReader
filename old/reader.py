@@ -4,6 +4,9 @@ import customtkinter as ctk
 from PIL import Image
 
 
+# NOT CONTINUED
+# TESTING TKINTER
+
 width = 1800
 height = 2700
 

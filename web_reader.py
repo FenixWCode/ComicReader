@@ -35,5 +35,11 @@ def get_image(folder, filename):
     return send_from_directory(full_path, filename)
 
 
+# GUI for webscraper
+@app.route('/download')
+def download():
+    return render_template("download.html")
+
+
 if __name__ == "__main__":
     app.run()

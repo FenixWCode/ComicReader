@@ -6,7 +6,11 @@ import requests
 import shutil
 
 
-def download_chapters(base_path, urls: list):
+def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Selenium"):
+    options = Options()
+    driver = webdriver.Firefox(options=options)
+
+    # Start number for naming the files
     i = 1
     for n, url in enumerate(urls):
         driver.get(url)
@@ -47,19 +51,16 @@ def download_chapters(base_path, urls: list):
                 driver.find_element(By.CLASS_NAME, "next").click()
                 cur_page_numb = int(driver.find_element(By.CLASS_NAME, "current").text)
             else:
+
                 driver.refresh()
                 continue
     driver.quit()
 
 
-options = Options()
-driver = webdriver.Firefox(options=options)
 
-# safe images at this path
-b_path = "C:\D\BILDER\Iwas\Bilder\Comics\Selenium"
-link = [
-    ""
+links = [
+
+
 ]
 
-download_chapters(b_path, link)
-
+download_chapters(links)

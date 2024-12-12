@@ -1,13 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.5">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
-<body>
+{% extends "template.html" %}
+{% block content %}
     <div class="card-grid">
-
         {% for dir in dirs %}
             <a href="{{ url_for('index', cur_dir=dir) }}">
                 <div class="card">
@@ -17,5 +10,4 @@
             </a>
         {% endfor %}
     </div>
-</body>
-</html>
+{% endblock %}
