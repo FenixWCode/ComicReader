@@ -1,17 +1,21 @@
 from flask import Flask, render_template, send_from_directory, abort
 import os
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
-base_dir = "C:\D\BILDER\Iwas\Bilder\Comics\Selenium"
+load_dotenv()
+base_dir = os.getenv("BASE_PATH")
 
 
+# Übersicht
 @app.route('/')
 def home():
     dirs = os.listdir(base_dir)
     return render_template("home.html", dirs=dirs)
 
 
+# Inhalt
 @app.route('/<cur_dir>')
 def index(cur_dir):
     full_path = os.path.join(base_dir, cur_dir)
@@ -42,4 +46,4 @@ def download():
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(host='0.0.0.0') # 0.0.0.0 = Im lokalen Netz für alle Geräte verfügbar

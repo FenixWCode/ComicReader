@@ -3,7 +3,7 @@ import keyboard
 
 
 scroll_distance = -500
-pause_time = 8
+pause_time = 5
 
 
 if keyboard.read_key() == 'h':

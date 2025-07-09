@@ -2,12 +2,12 @@
 {% block content %}
     <div class="card-grid">
         {% for dir in dirs %}
-            <a href="{{ url_for('index', cur_dir=dir) }}">
                 <div class="card">
-                    <img src="{{ url_for('get_image', folder=dir, filename='1.jpg') }}">
-                    <h3 class="title">{{ dir }} </h3>
+                    <a href="{{ url_for('index', cur_dir=dir) }}">
+                        <img src="{{ url_for('get_image', folder=dir, filename='1.jpg') }}">
+                        <h3 class="title">{{ dir }} </h3>
+                    </a>
                 </div>
-            </a>
         {% endfor %}
     </div>
 {% endblock %}

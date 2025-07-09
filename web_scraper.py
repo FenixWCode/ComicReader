@@ -4,11 +4,18 @@ from selenium.webdriver.common.by import By
 import os
 import requests
 import shutil
+from dotenv import load_dotenv
 
 
-def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Selenium"):
+# NH
+load_dotenv()
+base_dir = os.getenv("BASE_PATH")
+
+
+def download_chapters(urls: list, base_path):
     options = Options()
     driver = webdriver.Firefox(options=options)
+    n_chapters = len(urls)
 
     # Start number for naming the files
     i = 1
@@ -17,7 +24,7 @@ def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Sele
         driver.minimize_window()
 
         if n == 0:
-            title = driver.title[:20]
+            title = "temp_" + driver.title[:10]
             path = os.path.join(base_path, title)
             if not os.path.exists(path):
                 os.mkdir(path)
@@ -37,6 +44,7 @@ def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Sele
 
             # Generating the name for the page
             filename = page_name + '.jpg'
+
             # Downloading the Image
             request = requests.get(img_src, stream=True)
             if request.status_code == 200:
@@ -46,7 +54,7 @@ def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Sele
                 i += 1
 
                 if cur_page_numb == max_page_numb:
-                    print("Download Complete")
+                    print(f"Downloaded Chapter {n+1}")
                     break
                 driver.find_element(By.CLASS_NAME, "next").click()
                 cur_page_numb = int(driver.find_element(By.CLASS_NAME, "current").text)
@@ -57,10 +65,9 @@ def download_chapters(urls: list, base_path="C:\D\BILDER\Iwas\Bilder\Comics\Sele
     driver.quit()
 
 
-
 links = [
-
+   "https://nhentai.net/g/428587/1/"
 
 ]
 
-download_chapters(links)
+download_chapters(links, base_dir)
