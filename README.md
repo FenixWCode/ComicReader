@@ -1,4 +1,6 @@
 # Comic Reader
 
-This was a Project i started to learn Flask and also have a way to read some Comics i have locally on my Computer.
+In this Project i build a Webreader using Flask.
+
+
 
