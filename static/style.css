@@ -1,5 +1,5 @@
 body {
-  padding: 25px;
+
   background-color: #202020;
   color: white;
   font-size: 25px;
@@ -113,3 +113,33 @@ a:active {
     align-items: left;
     justify-content: left;
 }
+
+
+
+.button-container {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.sticky-button {
+    background-color: #A9A9A9;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 13px;
+    cursor: pointer;
+    margin-bottom: 2px; /* Abstand zwischen den Buttons */
+}
+
+.sticky-button:hover {
+    background-color: #45a049;
+}
+

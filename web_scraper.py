@@ -7,7 +7,7 @@ import shutil
 from dotenv import load_dotenv
 
 
-# NH
+
 load_dotenv()
 base_dir = os.getenv("BASE_PATH")
 
@@ -24,8 +24,11 @@ def download_chapters(urls: list, base_path):
         driver.minimize_window()
 
         if n == 0:
-            title = "temp_" + driver.title[:10]
-            path = os.path.join(base_path, title)
+            artist = input("Input the Artist:")
+            title = input("Input the Title:")
+
+            complete_title = artist + " - " + title
+            path = os.path.join(base_path, complete_title)
             if not os.path.exists(path):
                 os.mkdir(path)
                 print("Directory created")
@@ -66,7 +69,7 @@ def download_chapters(urls: list, base_path):
 
 
 links = [
-   "https://nhentai.net/g/428587/1/"
+   
 
 ]
 
